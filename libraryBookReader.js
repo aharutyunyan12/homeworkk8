@@ -23,3 +23,19 @@ class Book {
         return false
     }
 }
+
+
+class LibraryBookBase extends Book {
+    constructor (title, author, bookID) {
+        super(title, author)
+        this._bookID = bookID
+    }
+
+    get bookID() {
+        this._bookID = this.bookID
+    }
+
+    toString() {
+        return `${super.toString()}, {id: ${this._bookID}}`
+    }
+}
