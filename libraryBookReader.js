@@ -39,3 +39,30 @@ class LibraryBookBase extends Book {
         return `${super.toString()}, {id: ${this._bookID}}`
     }
 }
+
+class LibraryBook extends LibraryBookBase {
+    constructor (title, author, bookID, quantity) {
+        super(title, author, bookID)
+        this._quantity = quantity
+    }
+
+    get quantity() {
+        return this._quantity
+    }
+
+    set quantity(quantity) {
+        this._quantity = quantity
+    }
+
+    toString() {
+        return `${super.toString()}, {quantity: ${this._quantity}}`
+    }
+
+    increaseQuantityBy(amount) {
+        this.quantity += amount
+    }
+
+    decreaseQuantityBy(amount) {
+        this._quantity -= amount
+    }
+}
