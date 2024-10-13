@@ -94,3 +94,52 @@ class ReaderBook extends LibraryBookBase {
         return `${super.toString()}, {expiration date: ${this._expirationDate}}, {is returned: ${this._isReturned}}`
     }
 }
+
+class Reader extends ReaderBook{
+    constructor(title, author, bookID, quantity, expirationDate, isReturned, firstName, lastName, readerId) {
+        super(title, author, bookID, quantity, expirationDate, isReturned)
+        this._firstName = firstName 
+        this._lastName = lastName
+        this._readerId = readerId
+        this._books = [
+            `${super._title}`,
+            `${super._author}`,
+            `${super.__bookID}`,
+            `${super._quantity}`,
+            `${super._expirationDate}`,
+            `${super._isReturned}`
+        ]
+    }
+
+    get firstName() {
+        return this._firstName
+    }
+
+    set firstName(firstName) {
+        this._firstName = firstName
+    }
+
+    get lastName() {
+        return this._lastName
+    }
+
+    set lastName(lastName) {
+        this._lastName = lastName
+    }
+
+    get readerId() {
+        this._readerId
+    }
+
+    set readerId(readerId) {
+        this._readerId = readerId
+    }
+
+    toString() {
+        return `${this._firstName} ${thi._lastName}, {readerId: ${this.readerId}}`
+    }
+
+    borrowBook(book, library) {
+
+    }
+}
