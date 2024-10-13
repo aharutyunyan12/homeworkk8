@@ -70,4 +70,21 @@ class Student extends Person {
     get program() {
         return this._program
     }
+
+    passExam(programName, grade) {
+        this._program.push({programName: programName, grade: grade})
+    }
+
+    isAllPassed() {
+        let isPassed = false
+        const sumOfGrades = this._program.reduce((acc, item) => acc += item.grade,0)
+        if (sumOfGrades > 50) {
+            isPassed = true
+            this._year += 1
+        }
+    }
+
+    toString() {
+        return `${super.toString()}, is all exams passed: ${isPassed}`
+    }
 } 
