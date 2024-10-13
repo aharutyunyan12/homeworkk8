@@ -66,3 +66,31 @@ class LibraryBook extends LibraryBookBase {
         this._quantity -= amount
     }
 }
+
+class ReaderBook extends LibraryBookBase {
+    constructor(title, author, bookID, expirationDate, isReturned) {
+        super(title, author, bookID)
+        this._expirationDate = expirationDate
+        this._isReturned = isReturned
+    }
+
+    get expirationDate() {
+        return this._expirationDate
+    }
+
+    set expirationDate(expirationDate) {
+        this._expirationDate = expirationDate
+    }
+
+    get isReturned() {
+        return this._isReturned
+    }
+
+    set isReturned(isReturned) {
+        this._isReturned = isReturned
+    }
+
+    toString() {
+        return `${super.toString()}, {expiration date: ${this._expirationDate}}, {is returned: ${this._isReturned}}`
+    }
+}
