@@ -43,5 +43,31 @@ class Person {
     }
 }
     
+class Student extends Person {
+    constructor (firstName, lastName, gender, age, year, fee) {
+        super(firstName, lastName, gender, age)
+        this._year = year
+        this._fee = fee
+        this._program = []
+    }
 
-  
+    get year() {
+        return this._year
+    }
+
+    set year(year) {
+        this._year = year
+    }
+
+    get fee() {
+        return this._fee
+    }
+    
+    set fee(fee) {
+        this._fee = fee
+    }
+
+    get program() {
+        return this._program
+    }
+} 
